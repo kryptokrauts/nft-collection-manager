@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Tab } from '@headlessui/react';
+import { ArrowUpRight } from '@phosphor-icons/react';
 import { withUAL } from 'ual-reactjs-renderer';
 import { GetServerSideProps } from 'next';
 
@@ -117,7 +118,10 @@ function Collection({
                 rel="noopener noreferrer"
                 className="btn"
               >
-                Create NFT on Soon.Market
+                <span className="flex items-center">
+                  Create NFT on Soon.Market
+                  <ArrowUpRight className="icon" size={24} />
+                </span>
               </a>
             )}
             {chainKey == 'xpr' && (
@@ -127,7 +131,10 @@ function Collection({
                 rel="noopener noreferrer"
                 className="btn"
               >
-                Show on Soon.Market
+                <span className="flex items-center">
+                  Show on Soon.Market
+                  <ArrowUpRight className="icon" size={24} />
+                </span>
               </a>
             )}
             {hasAuthorization ? (
@@ -171,7 +178,7 @@ function Collection({
         <Tab.List
           ref={tabsRef}
           className={`tab-list sticky top-[5.5rem] z-10 duration-75 ${
-            isAddBackground ? 'bg-neutral-900' : ''
+            isAddBackground ? 'bg-zinc-900' : ''
           }`}
         >
           <Tab className="tab">{collectionTabs[0].name}</Tab>

@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { Chain } from './components/Chain';
 import { NavItem } from './components/NavItem';
 import { Login } from './components/Login';
-import { List, X } from '@phosphor-icons/react';
+import { List, X, ArrowUpRight } from '@phosphor-icons/react';
 
 import { chainKeyDefault } from '@configs/globalsConfig';
 
@@ -15,12 +15,12 @@ export function TopAppBar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="flex items-center justify-between top-0 left-0 sticky z-40 w-full py-4 bg-neutral-900 px-4 md:px-8">
+    <header className="flex items-center justify-between top-0 left-0 sticky z-40 w-full py-4 bg-zinc-900 px-4 md:px-8">
       <Chain chainKey={chainKey} />
       <nav className="flex gap-4">
         <div
           data-open={open}
-          className="flex md:items-center w-full h-[calc(100vh-5.5rem)] md:h-auto bg-neutral-900 flex-col md:flex-row absolute right-0 top-[5.5rem] md:static md:transform-none data-[open=false]:-left-full duration-300 data-[open=false]:opacity-0 data-[open=false]:md:opacity-100"
+          className="flex md:items-center w-full h-[calc(100vh-5.5rem)] md:h-auto bg-zinc-900 flex-col md:flex-row absolute right-0 top-[5.5rem] md:static md:transform-none data-[open=false]:-left-full duration-300 data-[open=false]:opacity-0 data-[open=false]:md:opacity-100"
         >
           <NavItem href={`/${chainKey}`} onClick={() => setOpen(false)}>
             My Collections
@@ -33,21 +33,30 @@ export function TopAppBar() {
             onClick={() => setOpen(false)}
             target="_blank"
           >
-            Explore
+            <span className="flex items-center">
+              Explore
+              <ArrowUpRight className="icon" size={24} />
+            </span>
           </NavItem>
           <NavItem
             href="https://soon.market/sell?utm_medium=navbar&utm_source=nft-manager"
             onClick={() => setOpen(false)}
             target="_blank"
           >
-            Sell
+            <span className="flex items-center">
+              Sell
+              <ArrowUpRight className="icon" size={24} />
+            </span>
           </NavItem>
           <NavItem
             href="https://soon.market/soon-spot-nfts?utm_medium=navbar&utm_source=nft-manager"
             onClick={() => setOpen(false)}
             target="_blank"
           >
-            Promote
+            <span className="flex items-center">
+              Promote
+              <ArrowUpRight className="icon" size={24} />
+            </span>
           </NavItem>
           <NavItem href={`/${chainKey}/about`} onClick={() => setOpen(false)}>
             About
