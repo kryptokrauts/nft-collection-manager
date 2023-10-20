@@ -1,5 +1,5 @@
-import { api } from '@libs/api';
 import chainsConfig from '@configs/chainsConfig';
+import { api } from '@libs/api';
 import { AxiosResponse } from 'axios';
 
 export interface TemplateProps {
@@ -60,7 +60,7 @@ export async function collectionTemplatesService(
   const response = await api.get(url, {
     params: {
       collection_name: collectionName || '',
-      template_id: templateId || '',
+      ids: templateId || '',
       page: page || 1,
       limit: 12,
       offset: offset || 12,
